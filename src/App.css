@@ -1,38 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Yatay kaymayı engelle */
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:disabled {
+  background-color: #aaa;
+}
+
+.teams-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Logoların taşması durumunda aşağıya geçmesini sağlar */
+  margin-top: 20px;
+}
+
+.team {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100px; /* Logolar için genişlik */
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.team img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.team p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .team {
+    width: 80px; /* Mobilde daha küçük yap */
   }
-  to {
-    transform: rotate(360deg);
+
+  .team img {
+    width: 80px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 20px; /* Başlık boyutunu küçült */
+  }
+
+  button {
+    width: 100%; /* Buton genişliği mobilde tam olsun */
   }
 }
